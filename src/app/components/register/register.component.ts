@@ -10,7 +10,7 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
+  public status: string;
   public page_title: string;
   public user: User;
 
@@ -24,9 +24,22 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(form) {
-    console.log(this.user.email);
-    console.log(this._userService.test());
-    form.reset();
+    this._userService.register(this.user).subscribe(
+          response => {
+            // console.log(response);
+            if ( response.status === 'success' ) {
+              this.status = response.status;
+              form.reset();
+            } else {
+              this.status = 'Error';
+            }
+          },
+          error => {
+            this.status = 'Error';
+            console.error(error);
+          }
+        );
+
   }
 
 }
