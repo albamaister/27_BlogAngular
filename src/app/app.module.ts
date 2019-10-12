@@ -19,6 +19,7 @@ import { ErrorComponent } from './components/error/error.component';
 // Servicios
 
 import { UserService } from './services/user.service';
+import { UserEditComponent } from './components/user-edit/user-edit.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { UserService } from './services/user.service';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    ErrorComponent
+    ErrorComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,
