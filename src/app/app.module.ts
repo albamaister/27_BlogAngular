@@ -23,6 +23,7 @@ import { ErrorComponent } from './components/error/error.component';
 import { UserService } from './services/user.service';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { AngularFileUploaderModule } from 'angular-file-uploader';
+import { CategoryNewComponent } from './components/category-new/category-new.component';
 
 
 
@@ -33,7 +34,8 @@ import { AngularFileUploaderModule } from 'angular-file-uploader';
     RegisterComponent,
     HomeComponent,
     ErrorComponent,
-    UserEditComponent
+    UserEditComponent,
+    CategoryNewComponent
   ],
   imports: [
     BrowserModule,
