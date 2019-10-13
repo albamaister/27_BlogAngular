@@ -22,6 +22,8 @@ import { ErrorComponent } from './components/error/error.component';
 
 import { UserService } from './services/user.service';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
+import { AngularFileUploaderModule } from 'angular-file-uploader';
+
 
 
 @NgModule({
@@ -39,7 +41,8 @@ import { UserEditComponent } from './components/user-edit/user-edit.component';
     FormsModule,
     HttpClientModule,
     FroalaEditorModule,
-    FroalaViewModule
+    FroalaViewModule,
+    AngularFileUploaderModule
 
   ],
   providers: [
