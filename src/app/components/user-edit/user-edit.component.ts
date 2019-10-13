@@ -14,6 +14,13 @@ export class UserEditComponent implements OnInit {
   public identity;
   public token;
   public status;
+  public froala_options: Object = {
+    charCounterCount: true,
+    toolbarButtons: ['bold', 'italic', 'underline', 'paragraphFormat', 'alert'],
+    toolbarButtonsXS: ['bold', 'italic', 'underline', 'paragraphFormat', 'alert'],
+    toolbarButtonsSM: ['bold', 'italic', 'underline', 'paragraphFormat', 'alert'],
+    toolbarButtonsMD: ['bold', 'italic', 'underline', 'paragraphFormat', 'alert'],
+  };
 
   constructor( private _userService: UserService ) {
     this.page_title = 'Ajustes de usuario';
@@ -36,7 +43,7 @@ export class UserEditComponent implements OnInit {
   onSubmit(form) {
     this._userService.update(this.token, this.user).subscribe(
         response => {
-          if ( response ) {
+          if ( response && response.status ) {
             this.status = 'success';
             console.log(response);
             // Actualizar uduario en sesion

@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+
 
 
 
@@ -35,7 +37,10 @@ import { UserEditComponent } from './components/user-edit/user-edit.component';
     BrowserModule,
     routing,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FroalaEditorModule,
+    FroalaViewModule
+
   ],
   providers: [
     appRoutingProviders,
