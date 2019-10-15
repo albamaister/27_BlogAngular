@@ -24,6 +24,7 @@ import { UserService } from './services/user.service';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { AngularFileUploaderModule } from 'angular-file-uploader';
 import { CategoryNewComponent } from './components/category-new/category-new.component';
+import { CategoryService } from './services/category.service';
 
 
 
@@ -49,7 +50,8 @@ import { CategoryNewComponent } from './components/category-new/category-new.com
   ],
   providers: [
     appRoutingProviders,
-    UserService
+    UserService,
+    CategoryService
   ],
   bootstrap: [AppComponent]
 })
