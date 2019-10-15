@@ -14,8 +14,8 @@
                 <li class="nav-item active">
                     <a class="nav-link" [routerLink]="['/home']">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Categorias</a>
+                <li class="nav-item" *ngFor="let categoria of categories">
+                    <a class="nav-link" href="#">{{categoria.name}}</a>
                 </li>
             </ul>
             <ul class="navbar-nav navbar-right" *ngIf="!identity">
