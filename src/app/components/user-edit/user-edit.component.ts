@@ -18,6 +18,7 @@ export class UserEditComponent implements OnInit {
   public token;
   public status;
   public url;
+  
   public froala_options: Object = {
     charCounterCount: true,
     toolbarButtons: ['bold', 'italic', 'underline', 'paragraphFormat', 'alert'],
