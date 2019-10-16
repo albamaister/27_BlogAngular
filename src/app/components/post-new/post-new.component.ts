@@ -4,6 +4,7 @@ import { UserService } from '../../services/user.service';
 import { CategoryService } from '../../services/category.service';
 import { Post } from '../../models/post.model';
 import { global } from '../../services/global';
+import { PostService } from 'src/app/services/post.service';
 
 
 
@@ -20,6 +21,7 @@ export class PostNewComponent implements OnInit {
   public post: Post;
   public categories;
   public url;
+  public status;
 
   public froala_options: Object = {
     charCounterCount: true,
@@ -49,7 +51,8 @@ export class PostNewComponent implements OnInit {
   constructor( private _userService: UserService,
                private _categoryService: CategoryService,
                private _route: ActivatedRoute,
-               private _router: Router  ) {
+               private _router: Router,
+               private _postService: PostService  ) {
     this.page_title = 'Crear una entrada';
     this.identity = this._userService.getIdentity();
     this.token = this._userService.getToken();
@@ -63,7 +66,21 @@ export class PostNewComponent implements OnInit {
   }
 
   onSubmit(form) {
-    console.log(this.post);
+    this._postService.create(this.token, this.post).subscribe(
+          response => {
+            if (response.status === 'success') {
+              this.post = response.post;
+              this.status = 'success';
+              this._router.navigate(['/home']);
+            } else {
+              this.status = 'error';
+
+            }
+          },
+          error => {
+            this.status = 'error';
+          }
+    );
 
   }
 

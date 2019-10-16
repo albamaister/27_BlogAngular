@@ -26,6 +26,7 @@ import { AngularFileUploaderModule } from 'angular-file-uploader';
 import { CategoryNewComponent } from './components/category-new/category-new.component';
 import { CategoryService } from './services/category.service';
 import { PostNewComponent } from './components/post-new/post-new.component';
+import { PostService } from './services/post.service';
 
 
 
@@ -53,7 +54,8 @@ import { PostNewComponent } from './components/post-new/post-new.component';
   providers: [
     appRoutingProviders,
     UserService,
-    CategoryService
+    CategoryService,
+    PostService
   ],
   bootstrap: [AppComponent]
 })
