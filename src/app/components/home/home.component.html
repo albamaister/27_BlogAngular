@@ -24,6 +24,16 @@
                 <div class="post-image w-100" *ngIf="!post.image">
                     <img src="assets\img\default.png" class="w-100">
                 </div>
+
+                <!-- Botones de accion -->
+                <div class="post-buttons mt-2">
+                    <a [routerLink]="['/home']" class="btn btn-success mr-2">Leer</a>
+                    <span *ngIf="identity && identity.sub == post.user_id">
+                        <a [routerLink]="['/home']" class="btn btn-warning mr-2">Editar</a>
+                        <a [routerLink]="['/home']" class="btn btn-danger">Borrar</a>                        
+                    </span>
+                </div>
+
             </div>
         </article>
     </div>
