@@ -27,6 +27,7 @@ import { CategoryNewComponent } from './components/category-new/category-new.com
 import { CategoryService } from './services/category.service';
 import { PostNewComponent } from './components/post-new/post-new.component';
 import { PostService } from './services/post.service';
+import { PostDetailComponent } from './components/post-detail/post-detail.component';
 
 
 
@@ -39,7 +40,8 @@ import { PostService } from './services/post.service';
     ErrorComponent,
     UserEditComponent,
     CategoryNewComponent,
-    PostNewComponent
+    PostNewComponent,
+    PostDetailComponent
   ],
   imports: [
     BrowserModule,
