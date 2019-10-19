@@ -64,21 +64,24 @@ export class PostEditComponent implements OnInit {
     }
 
     onSubmit(form) {
-      this._postService.create(this.token, this.post).subscribe(
-            response => {
-              if (response.status === 'success') {
-                this.post = response.post;
-                this.status = 'success';
-                this.router.navigate(['/home']);
-              } else {
-                this.status = 'error';
+      this._postService.update(this.token, this.post, this.post.id).subscribe(
+        response => {
+          if (response.status === 'success') {
+            this.status = 'success';
+            // this.post = response.post;
+            // Redirigir a la pagina del post
+            this.router.navigate(['/entrada', this.post.id]);
+          } else {
+            this.status = 'error';
+            console.log('error');
+          }
 
-              }
-            },
-            error => {
-              this.status = 'error';
-            }
-      );
+        },
+        error => {
+          console.log(error);
+          this.status = 'error';
+        }
+    ); 
 
     }
 
