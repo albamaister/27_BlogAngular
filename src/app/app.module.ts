@@ -28,6 +28,7 @@ import { CategoryService } from './services/category.service';
 import { PostNewComponent } from './components/post-new/post-new.component';
 import { PostService } from './services/post.service';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
+import { PostEditComponent } from './components/post-edit/post-edit.component';
 
 
 
@@ -41,7 +42,8 @@ import { PostDetailComponent } from './components/post-detail/post-detail.compon
     UserEditComponent,
     CategoryNewComponent,
     PostNewComponent,
-    PostDetailComponent
+    PostDetailComponent,
+    PostEditComponent
   ],
   imports: [
     BrowserModule,
