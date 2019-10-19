@@ -16,7 +16,7 @@ export class PostService {
     }
 
     create( token, post ): Observable<any> {
-
+        post.content = global.htmlEntities(post.content); // Limpiar campo content
         let json = JSON.stringify(post);
         let params = 'json=' + json;
         let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
@@ -36,6 +36,7 @@ export class PostService {
     }
 
     update( token, post, id ): Observable<any> {
+        post.content = global.htmlEntities(post.content); // Limpiar campo content
         let json = JSON.stringify(post);
         let params = 'json=' + json;
         let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')

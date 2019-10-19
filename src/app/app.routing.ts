@@ -15,6 +15,10 @@ import { PostEditComponent } from './components/post-edit/post-edit.component';
 import { CategoryDetailComponent } from './components/category-detail/category-detail.component';
 
 
+import { IdentityGuard } from './services/identity.guard';
+
+
+
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
@@ -22,11 +26,11 @@ const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'logout/:sure', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
-    { path: 'ajustes', component: UserEditComponent },
-    { path: 'new-category', component: CategoryNewComponent },
-    { path: 'new-post', component: PostNewComponent },
+    { path: 'ajustes', component: UserEditComponent, canActivate: [IdentityGuard] },
+    { path: 'new-category', component: CategoryNewComponent, canActivate: [IdentityGuard] },
+    { path: 'new-post', component: PostNewComponent, canActivate: [IdentityGuard] },
     { path: 'entrada/:id', component: PostDetailComponent },
-    { path: 'editar-entrada/:id', component: PostEditComponent },
+    { path: 'editar-entrada/:id', component: PostEditComponent, canActivate: [IdentityGuard] },
     { path: 'categoria/:id', component: CategoryDetailComponent },
     { path: '**', component: ErrorComponent }
 ];

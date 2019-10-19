@@ -30,6 +30,7 @@ import { PostService } from './services/post.service';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
 import { PostEditComponent } from './components/post-edit/post-edit.component';
 import { CategoryDetailComponent } from './components/category-detail/category-detail.component';
+import { IdentityGuard } from './services/identity.guard';
 
 
 
@@ -61,7 +62,8 @@ import { CategoryDetailComponent } from './components/category-detail/category-d
     appRoutingProviders,
     UserService,
     CategoryService,
-    PostService
+    PostService,
+    IdentityGuard
   ],
   bootstrap: [AppComponent]
 })
