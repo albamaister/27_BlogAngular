@@ -22,15 +22,22 @@ export class CategoryService {
 
         let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
                                        .set('Authorization', token);
-
         return this._http.post(this.url + 'category', params, { headers });
     }
 
     getCategories(): Observable<any> {
-
         let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
-
         return this._http.get(this.url + 'category', {headers});
+    }
+
+    getCategory(id): Observable<any> {
+        let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+        return this._http.get(this.url + 'category/' + id, {headers});
+    }
+
+    getCategoryPost(id): Observable<any> {
+        let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
+        return this._http.get(this.url + 'post/category/' + id, {headers});
     }
 
 
