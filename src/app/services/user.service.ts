@@ -43,6 +43,7 @@ export class UserService {
     }
 
     update( token, user ): Observable<any>  {
+        user.description = global.htmlEntities(user.description); // Limpiar campo content
         let json = JSON.stringify(user);
         let params = 'json=' + json;
         let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded').set('Authorization', token);
