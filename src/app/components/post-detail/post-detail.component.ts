@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Post } from '../../models/post.model';
 import { PostService } from '../../services/post.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import { UserService } from '../../services/user.service';
 
 
 
@@ -13,8 +14,11 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class PostDetailComponent implements OnInit {
 
   public post: Post;
+  public identity;
 
-  constructor( private _postService: PostService, private route: ActivatedRoute, private router: Router ) { }
+  constructor(private _userService: UserService,
+              private _postService: PostService, private route: ActivatedRoute, private router: Router ) {
+               }
 
   ngOnInit() {
     this.getPost();
@@ -30,6 +34,8 @@ export class PostDetailComponent implements OnInit {
         response => {
           if ( response.status === 'success' ) {
             this.post = response.post;
+            this.identity = this.post['user'].id;
+            console.log(this.identity, 'casa');
             console.log(this.post);
           } else {
             this.router.navigate(['/home']);

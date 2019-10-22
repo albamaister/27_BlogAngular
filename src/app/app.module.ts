@@ -31,6 +31,7 @@ import { PostDetailComponent } from './components/post-detail/post-detail.compon
 import { PostEditComponent } from './components/post-edit/post-edit.component';
 import { CategoryDetailComponent } from './components/category-detail/category-detail.component';
 import { IdentityGuard } from './services/identity.guard';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 
@@ -46,7 +47,8 @@ import { IdentityGuard } from './services/identity.guard';
     PostNewComponent,
     PostDetailComponent,
     PostEditComponent,
-    CategoryDetailComponent
+    CategoryDetailComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
