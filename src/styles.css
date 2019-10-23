@@ -17,6 +17,17 @@
     height: 50px;
 }
 
+.avatar_mask_profile {
+    width: 90px;
+    height: 90px;
+    border-radius: 900px;
+    overflow: hidden;
+}
+
+.avatar_mask_profile img {
+    height: 90px;
+}
+
 .post-image {
     height: 200px;
     overflow: hidden;
@@ -26,3 +37,5 @@ footer {
     margin-top: 50px;
     color: lightgray;
 }
+
+avatar_mask_profile {}
